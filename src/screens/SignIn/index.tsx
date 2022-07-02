@@ -1,10 +1,21 @@
 import React from 'react';
+import { Input } from '../../components';
 import { Container } from './styles';
 
 export function SignIn() {
 	return (
-    <Container>
-
-    </Container>
-  );
+		<Container>
+			<Input
+				placeholder='E-mail'
+				type='secondary'
+				autoCorrect={false}
+				autoCapitalize='none'
+			/>
+      <Input
+				placeholder='Senha'
+				type='secondary'
+        secureTextEntry
+			/>
+		</Container>
+	);
 }
