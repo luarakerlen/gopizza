@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input } from '../../components';
+import { Button, Input } from '../../components';
 import { Container } from './styles';
 
 export function SignIn() {
@@ -11,11 +11,8 @@ export function SignIn() {
 				autoCorrect={false}
 				autoCapitalize='none'
 			/>
-      <Input
-				placeholder='Senha'
-				type='secondary'
-        secureTextEntry
-			/>
+			<Input placeholder='Senha' type='secondary' secureTextEntry />
+			<Button title='Entrar' type='secondary' />
 		</Container>
 	);
 }
