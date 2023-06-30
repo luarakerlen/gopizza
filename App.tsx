@@ -1,6 +1,7 @@
 import React from 'react';
 import AppLoading from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
+import { AuthProvider } from './src/hooks/auth';
 import { SignIn } from './src/screens';
 
 import { useFonts, DMSans_400Regular } from '@expo-google-fonts/dm-sans';
@@ -22,7 +23,9 @@ export default function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<StatusBar style='light' translucent backgroundColor='transparent' />
-			<SignIn />
+			<AuthProvider>
+				<SignIn />
+			</AuthProvider>
 		</ThemeProvider>
 	);
 }
