@@ -1,6 +1,9 @@
 import React from 'react';
-import { RectButtonProps } from 'react-native-gesture-handler';
 import { Container, Load, Title, TypeProps } from './styles';
+import {
+	GestureHandlerRootView,
+	RectButtonProps,
+} from 'react-native-gesture-handler';
 
 type Props = RectButtonProps & {
 	title: string;
@@ -15,8 +18,10 @@ export function Button({
 	...rest
 }: Props) {
 	return (
-		<Container type={type} enabled={!isLoading} {...rest}>
-			{isLoading ? <Load /> : <Title>{title}</Title>}
-		</Container>
+		<GestureHandlerRootView style={{ flex: 1 }}>
+			<Container type={type} enabled={!isLoading} {...rest}>
+				{isLoading ? <Load /> : <Title>{title}</Title>}
+			</Container>
+		</GestureHandlerRootView>
 	);
 }
